@@ -10,17 +10,23 @@
 from pyrogram.types import InlineKeyboardButton
 
 
-def track_markup(_, videoid, user_id, channel, fplay):
+def track_markup(_, videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
                 text=_["P_B_1"],
-                callback_data=f"MusicStream {videoid}|{user_id}|a|{channel}|{fplay}",
+                callback_data=f"MusicStream {videoid}|{user_id}|a",
             ),
             InlineKeyboardButton(
                 text=_["P_B_2"],
-                callback_data=f"MusicStream {videoid}|{user_id}|v|{channel}|{fplay}",
+                callback_data=f"MusicStream {videoid}|{user_id}|v",
             ),
+        ],
+        [
+                InlineKeyboardButton("✦ Group", url=f"https://t.me/Flirt_Chatting_grp"),
+                InlineKeyboardButton(
+                    "Channel 📨", url=f"https://t.me/CUTE_GiFS987"
+             ),
         ],
         [
             InlineKeyboardButton(
@@ -41,6 +47,12 @@ def stream_markup(_, videoid):
             ),
             InlineKeyboardButton(
                 text=_["PL_B_3"], switch_inline_query_current_chat=""
+            ),
+        ],
+        [
+                InlineKeyboardButton("✦ Group", url=f"https://t.me/Flirt_Chatting_grp"),
+                InlineKeyboardButton(
+                    "Channel ✦", url=f"https://t.me/CUTE_GiFS987"
             ),
         ],
         [
@@ -66,17 +78,23 @@ def telegram_markup(_):
     return buttons
 
 
-def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
+def playlist_markup(_, videoid, user_id, ptype):
     buttons = [
         [
             InlineKeyboardButton(
                 text=_["P_B_1"],
-                callback_data=f"YukkiPlaylists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}",
+                callback_data=f"YukkiPlaylists {videoid}|{user_id}|{ptype}|a",
             ),
             InlineKeyboardButton(
                 text=_["P_B_2"],
-                callback_data=f"YukkiPlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}",
+                callback_data=f"YuKkiPlaylists {videoid}|{user_id}|{ptype}|v",
             ),
+        ],
+        [
+                InlineKeyboardButton("📨 Support", url=f"https://t.me/Flirt_Chatting_grp"),
+                InlineKeyboardButton(
+                    "Updates 📨", url=f"https://t.me/CUTE_GiFS987"
+             ),
         ],
         [
             InlineKeyboardButton(
@@ -88,12 +106,12 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
     return buttons
 
 
-def livestream_markup(_, videoid, user_id, mode, channel, fplay):
+def livestream_markup(_, videoid, user_id, mode):
     buttons = [
         [
             InlineKeyboardButton(
                 text=_["P_B_3"],
-                callback_data=f"LiveStream {videoid}|{user_id}|{mode}|{channel}|{fplay}",
+                callback_data=f"LiveStream {videoid}|{user_id}|{mode}",
             ),
             InlineKeyboardButton(
                 text=_["CLOSEMENU_BUTTON"],
@@ -104,25 +122,29 @@ def livestream_markup(_, videoid, user_id, mode, channel, fplay):
     return buttons
 
 
-def slider_markup(
-    _, videoid, user_id, query, query_type, channel, fplay
-):
+def slider_markup(_, videoid, user_id, query, query_type):
     query = f"{query[:20]}"
     buttons = [
         [
             InlineKeyboardButton(
                 text=_["P_B_1"],
-                callback_data=f"MusicStream {videoid}|{user_id}|a|{channel}|{fplay}",
+                callback_data=f"MusicStream {videoid}|{user_id}|a",
             ),
             InlineKeyboardButton(
                 text=_["P_B_2"],
-                callback_data=f"MusicStream {videoid}|{user_id}|v|{channel}|{fplay}",
+                callback_data=f"MusicStream {videoid}|{user_id}|v",
+            ),
+        ],
+        [
+                InlineKeyboardButton("📨 Support", url=f"https://t.me/Flirt_Chatting_grp"),
+                InlineKeyboardButton(
+                    "Updates 📨", url=f"https://t.me/CUTE_GiFS987"
             ),
         ],
         [
             InlineKeyboardButton(
                 text="❮",
-                callback_data=f"slider B|{query_type}|{query}|{user_id}|{channel}|{fplay}",
+                callback_data=f"slider B|{query_type}|{query}|{user_id}",
             ),
             InlineKeyboardButton(
                 text=_["CLOSE_BUTTON"],
@@ -130,7 +152,7 @@ def slider_markup(
             ),
             InlineKeyboardButton(
                 text="❯",
-                callback_data=f"slider F|{query_type}|{query}|{user_id}|{channel}|{fplay}",
+                callback_data=f"slider F|{query_type}|{query}|{user_id}",
             ),
         ],
     ]
